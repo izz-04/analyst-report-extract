@@ -43,7 +43,6 @@ def analyze_pdf_with_gemini(pdf_path):
             contents=[pdf_file , prompt]  
         )
 
-      
         print(response.usage_metadata)
         match = re.search(r"\{.*}", response.text, re.DOTALL)
 
@@ -101,7 +100,7 @@ def extract_pdf_financial(pdf_name):
 
 if __name__ == "__main__":
     # Specify the PDF path here:
-    pdf_path = os.path.join("pdf", "3ren_financial.pdf")  # Replace with the actual path to your PDF file
+    pdf_path = os.path.join("pdf", "250403-publicinvest-msb.pdf")  # Replace with the actual path to your PDF file
 
     if not os.path.exists(pdf_path):
         print(f"Error: PDF file '{pdf_path}' not found.")
